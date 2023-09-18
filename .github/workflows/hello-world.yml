@@ -9,4 +9,4 @@ jobs:
       - name: Run kotlin script
         run: |
            #!/usr/bin/env kotlin
-          println("Hello World!)
+           println("Hello World!)

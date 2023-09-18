@@ -11,4 +11,4 @@ jobs:
         with:
           script: |
               #!/usr/bin/env kotlin
-              println("hello world!)
+              println("hello world!")

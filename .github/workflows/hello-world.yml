@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run kotlin script
-      - uses: fwilhe2/setup-kotlin@main
+        uses: fwilhe2/setup-kotlin@main
         with:
           script: |
               #!/usr/bin/env kotlin

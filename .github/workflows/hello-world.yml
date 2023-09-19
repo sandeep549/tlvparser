@@ -35,9 +35,7 @@ jobs:
 
       - name: Run the script
         run: |
-          pwd
-          ls -al
-          kotlinc -script YourScript.main.kts
+          kotlinc -script YourScript.main.kts >> $GITHUB_ENV
               
       - name: get variavle in shell
         run: |

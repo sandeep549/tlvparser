@@ -17,7 +17,7 @@ jobs:
               #!/usr/bin/env kotlin
               println("hello world!")
               println("version ${{ env.version }}")
-              println("${{ GITHUB_ENV }}")
+              ${{ env.BODY }} = "this is body from kotlin"
               
       - name: get variavle in shell
         run: |

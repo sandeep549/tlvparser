@@ -10,14 +10,21 @@ jobs:
         run: |
           echo "version=5.67.0" >> $GITHUB_ENV
           
-      - name: Run kotlin script
-        uses: fwilhe2/setup-kotlin@main
+      # - name: Run kotlin script
+      #   uses: fwilhe2/setup-kotlin@main
+      #   with:
+      #     script: |
+      #         #!/usr/bin/env kotlin
+      #         println("hello world!")
+      #         println("version ${{ env.version }}")
+      #         "${env.BODY}"="this is body from kotlin"
+
+      - uses: fwilhe2/setup-kotlin@main
         with:
-          script: |
-              #!/usr/bin/env kotlin
-              println("hello world!")
-              println("version ${{ env.version }}")
-              "${env.BODY}"="this is body from kotlin"
+          version: 1.8.10
+
+      - run: |
+            java.io.File(".").listFiles().forEach {it -> println(it.getName().toString())}
               
       - name: get variavle in shell
         run: |

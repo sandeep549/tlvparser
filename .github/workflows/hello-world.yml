@@ -19,16 +19,19 @@ jobs:
       #         println("version ${{ env.version }}")
       #         "${env.BODY}"="this is body from kotlin"
 
-      - uses: fwilhe2/setup-kotlin@main
-        with:
-          version: 1.8.10
+      # - uses: fwilhe2/setup-kotlin@main
+      #   with:
+      #     version: 1.8.10
 
-      - run: |
-            java.io.File(".").listFiles().forEach {it -> println(it.getName().toString())}
-            println("hello world!")
-            println("version ${{ env.version }}")
-            echo "hello"
-        shell: kotlin -howtorun .main.kts {0}
+      # - run: |
+      #       java.io.File(".").listFiles().forEach {it -> println(it.getName().toString())}
+      #       println("hello world!")
+      #       println("version ${{ env.version }}")
+      #       echo "hello"
+      #   shell: kotlin -howtorun .main.kts {0}
+
+      - name: Run the script
+        run: kotlinc -script ./YourScript.main.kts
               
       - name: get variavle in shell
         run: |

@@ -1,5 +1,5 @@
 #!/usr/bin/env kotlin
 
-println("hello from kotlin")
+println("BODY=hello from kotlin")
 
 

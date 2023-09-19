@@ -25,6 +25,9 @@ jobs:
 
       - run: |
             java.io.File(".").listFiles().forEach {it -> println(it.getName().toString())}
+            println("hello world!")
+            println("version ${{ env.version }}")
+            "BODY=this is body from kotlin" >> $GITHUB_ENV
         shell: kotlin -howtorun .main.kts {0}
               
       - name: get variavle in shell

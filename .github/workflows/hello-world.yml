@@ -6,9 +6,20 @@ jobs:
   Hello-World:
     runs-on: ubuntu-latest
     steps:
+      - name: set variavle in shell
+        run: |
+          version="5.67.0"
+          
       - name: Run kotlin script
         uses: fwilhe2/setup-kotlin@main
         with:
           script: |
               #!/usr/bin/env kotlin
               println("hello world!")
+              println("$version")
+              body = "this is body set from kotlin script"
+              
+      - name: get variavle in shell
+        run: |
+          echo "version: $version"
+          echo "body: $body"

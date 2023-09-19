@@ -31,7 +31,9 @@ jobs:
       #   shell: kotlin -howtorun .main.kts {0}
 
       - name: Run the script
-        run: kotlinc ./YourScript.main.kts
+        run: |
+          pwd
+          kotlinc ./YourScript.main.kts
               
       - name: get variavle in shell
         run: |

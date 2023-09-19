@@ -2,13 +2,17 @@ name: Hello World
 run-name: ${{ github.actor }} - says hello world on ${{ github.ref_name }} 🚀
 on: [workflow_dispatch]
 
+env:
+  BODY: BODY
+  
 jobs:
   Hello-World:
     runs-on: ubuntu-latest
     steps:
       - name: set variavle in shell
+        id: vars
         run: |
-          export version="5.67.0"
+          echo "version=5.67.0" >> $GITHUB_OUTPUT
           
       - name: Run kotlin script
         uses: fwilhe2/setup-kotlin@main
@@ -16,10 +20,10 @@ jobs:
           script: |
               #!/usr/bin/env kotlin
               println("hello world!")
-              println("$version")
-              val body = "this is body set from kotlin script"
+              println("version ${{ steps.vars.outputs.version }}")
+              $BODY = "this is body set from kotlin script"
               
       - name: get variavle in shell
         run: |
-          echo "version: $version"
-          echo "body: $body"
+          echo "version: ${{ steps.vars.outputs.version }}"
+          echo "body: $BODY"

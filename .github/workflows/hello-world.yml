@@ -37,7 +37,7 @@ jobs:
         run: |
           pwd
           ls -al
-          kotlinc ./YourScript.main.kts
+          kotlinc YourScript.main.kts
               
       - name: get variavle in shell
         run: |

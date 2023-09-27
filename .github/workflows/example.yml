@@ -1,0 +1,18 @@
+# Must always execute on develop
+
+name: Bump Version
+run-name: ${{ github.actor }} running example 🚀
+on:
+  workflow_run:
+    workflows: ["Hello World"]
+    types:
+      - completed
+
+jobs:
+  Example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Example
+        run: |
+          set -ex
+          echo "say example"

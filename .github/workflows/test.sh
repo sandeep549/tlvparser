@@ -1,5 +1,5 @@
 #!/bin/bash
 set -ex
 
-echo "version: ${{ env.version }}"
-echo "body: ${{ env.BODY }}"
+echo "version: $version"
+echo "body: $BODY"
